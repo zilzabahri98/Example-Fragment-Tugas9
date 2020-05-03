@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_list">
+
+    <fragment
+        android:id="@+id/nav_list"
+        android:name="com.zil.revisitugas9.FragmentList"
+        android:label="@string/list"
+        tools:layout="@layout/fragment_list">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            app:destination="@id/nav_home_second" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home_second"
+        android:name="com.zil.revisitugas9.HomeSecondFragment"
+        android:label="@string/home_second"
+        tools:layout="@layout/fragment_home_second">
+        <action
+            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
+            app:destination="@id/nav_list" />
+
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_grid"
+        android:name="com.zil.revisitugas9.FragmentGrid"
+        android:label="@string/grid"
+        tools:layout="@layout/fragment_grid" />
+
+    <fragment
+        android:id="@+id/nav_cardview"
+        android:name="com.zil.revisitugas9.FragmentCardView"
+        android:label="@string/with_cardview"
+        tools:layout="@layout/fragment_card_view" />
+</navigation>
